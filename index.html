@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Piskel clone</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" class="logo"><img src="src/views/AppView/assets/piskel-logo.png" alt="piskel-logo" id="logo"></a>
+    </nav>
+  </header>
+  <main id="landing-page_main">
+    <section class="left-section">
+      <img src="src/views/AppView/assets/llama.gif" class="landing-gif" alt="piskel art example" width="300" height="300">
+    </section>
+    <section class="right-section">
+      <div class="progect-info">
+        <h1>Piskel-clone App</h1>
+        <p class="subtext">online editor for animated sprites & pixel art</p>
+        <ul>
+          <li>Pen;</li>
+          <li>Eraser;</li>
+          <li>Color selection;</li>
+          <li>Paint bucket;</li>
+          <li>Line, circle, rectangle;</li>
+          <li>Paint animation (+ fullscreen mode);</li>
+          <li>Frames management</li>
+        </ul>
+        <div class="btn-container">
+          <a href="#" id="create-sprite-btn" >create sprite</a>
+        </div>
+        <div class="about-author">
+          <h2>Author: Volha Hrakholskaya</h2>
+          <h3>The Rolling Scopes School 2019 Q1</h3>
+          <p class="subtext">GitHub: <a href="https://github.com/Vola-G" target="_blank"> Vola-G</a></p>
+        </div>
+    </div>
+    </section>
+  </main>
+  <main id="art-page_main">
+    <section class='tools-section'>
+      <div id="tools">
+        <!-- <div class="pen-size-container">
+          <div class="pen-size-btn pen-size_small"></div>
+          <div class="pen-size-btn pen-size_medium"></div>
+          <div class="pen-size-btn pen-size_large"></div>
+          <div class="pen-size-btn pen-size_extra-large"></div>
+        </div> -->
+        <div id="tools-container">
+          <button class="tools-btn active-tool" id="pen"></button>
+          <button class="tools-btn" id="stroke"></button>
+          <button class="tools-btn" id="eraser"></button>
+          <button class="tools-btn" id="bucket"></button>
+          <button class="tools-btn" id="circle"></button>
+          <button class="tools-btn" id="rectangle"></button>
+          <button class="tools-btn" id="hexagon"></button>
+          <button class="tools-btn" id="color-picker"></button>
+        </div>
+        <div class="palette">
+          <div class="primary-color-container">
+            <input type="color" id="primary-color" class="active-color" value="#f1d903">
+          </div>
+          <div class="secondary-color-container">
+            <input type="color" id="secondary-color" value="#ffffff">
+          </div>
+          <div id="swap-colors"></div>
+        </div>
+        <div class="keyboard-shortcut_container">
+          <span id="keyboard-icon">
+          </span>
+        </div>
+        <div id="keyboard-shortcut" class="modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <span class="close">X</span>
+              <h2>Keyboard shortcuts</h2>
+            </div>
+            <div class="modal-body">
+              <p>Some text in the Modal Body</p>
+              <p>Some other text...</p>
+            </div>
+            <div class="modal-footer">
+              <h3>Click on a shortcut to change the key.</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class='frames-section'>
+      <div id="frames-bar">
+        <div id="frames-container">
+          <div class='frame active-frame' draggable="true"><div class="canvas-background"><canvas width="96px" height="96px"></canvas>
+              <button class="frame-btn delete-frame-btn"></button>
+              <button class="frame-btn copy-frame-btn"></button>
+              <button class="frame-number-btn">1</button>
+            </div>
+          </div>
+        </div>
+        <div id="add-frame-btn">
+          <div class="add-frame-icon"></div>
+          <div class="add-frame-btn-text">Add new frame</div>
+      </div>
+    </div>
+    </section>
+    <section class='canvas-section'>
+      <div class="main-canvas-background">
+        <canvas id='canvas' width="32px" height="32px"></canvas>
+      </div>
+    </section>
+    <section class='preview-section'>
+      <div class="preview-container">
+        <div class="canvas-background">
+          <div class="animation-player">
+            <canvas id="preview-canvas" width="200px" height="200px"></canvas>
+          </div>
+        </div>
+        <div class="fps-container">
+            <div class="fps">FPS: 1</div>
+            <input type="range" min="1" max="24" step="1" value="1">
+        </div>
+      </div>
+      <button id='fullscreen-btn'>Open at fullscreen</button>
+      <p class="canvas-size-text">Canvas size:</p>
+      <div id="canvas-size">
+        <button id="small-canvas" class="btn-active">32x32</button>
+        <button id="medium-canvas">64x64</button>
+        <button id="large-canvas">128x128</button>
+      </div>
+      <div class="coords-container">
+        <p id="cursor-coords"></p>
+      </div>
+    </section>
+  </main>
+<script type="text/javascript" src="app.bundle.js"></script></body>
+</html>
