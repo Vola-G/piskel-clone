@@ -9,12 +9,12 @@
 <body>
   <header>
     <nav>
-      <a href="#" class="logo"><img src="img/piskel-logo.png" alt="piskel-logo" id="logo"></a>
+      <a href="#" class="logo"><img src="./assets/piskel-logo.png" alt="piskel-logo" id="logo"></a>
     </nav>
   </header>
   <main id="landing-page_main">
     <section class="left-section">
-      <img src="src/views/AppView/assets/llama.gif" class="landing-gif" alt="piskel art example" width="300" height="300">
+      <img src="./assets/llama.gif" class="landing-gif" alt="piskel art example" width="300" height="300">
     </section>
     <section class="right-section">
       <div class="progect-info">
@@ -50,14 +50,15 @@
           <div class="pen-size-btn pen-size_extra-large"></div>
         </div> -->
         <div id="tools-container">
-          <button class="tools-btn active-tool" id="pen"></button>
-          <button class="tools-btn" id="stroke"></button>
-          <button class="tools-btn" id="eraser"></button>
-          <button class="tools-btn" id="bucket"></button>
-          <button class="tools-btn" id="circle"></button>
-          <button class="tools-btn" id="rectangle"></button>
-          <button class="tools-btn" id="hexagon"></button>
-          <button class="tools-btn" id="color-picker"></button>
+          <button class="tools-btn active-tool tooltip pen" id="pen" data-title="Pen tool. HotKey (Q)"></button>
+          <button class="tools-btn tooltip stroke" id="stroke" data-title="Line tool. HotKey (W)"></button>
+          <button class="tools-btn tooltip eraser" id="eraser" data-title="Eraser tool. HotKey (E)"></button>
+          <button class="tools-btn tooltip bucket" id="bucket" data-title="Bucket tool. HotKey (R)"></button>
+          <button class="tools-btn tooltip circle" id="circle" data-title="Circle tool. HotKey (T)"></button>
+          <button class="tools-btn tooltip rectangle" id="rectangle" data-title="Rectangle tool. HotKey (Y)"></button>
+          <button class="tools-btn tooltip rotate" id="rotate" data-title="Hexagon tool. HotKey (U)"></button>
+          <button class="tools-btn tooltip move" id="move" data-title="Move tool. HotKey (I)"></button>
+          <button class="tools-btn tooltip color-picker" id="color-picker" data-title="Color-picker tool. HotKey (O)"></button>
         </div>
         <div class="palette">
           <div class="primary-color-container">
@@ -79,8 +80,42 @@
               <h2>Keyboard shortcuts</h2>
             </div>
             <div class="modal-body">
-              <p>Some text in the Modal Body</p>
-              <p>Some other text...</p>
+              <div class="shortcut-container">
+                  <div class="tools-btn tooltip pen" data-title="Pen tool. HotKey (Q)"></div>
+                  <div class="tools-btn hotkey-change-btn">Q</div>
+              </div>
+              <div class="shortcut-container">
+                  <div class="tools-btn tooltip stroke" data-title="Line tool. HotKey (W)"></div>
+                  <div class="tools-btn hotkey-change-btn" >W</div>
+              </div>
+              <div class="shortcut-container">
+                  <div class="tools-btn tooltip eraser" data-title="Eraser tool. HotKey (E)"></div>
+                  <div class="tools-btn hotkey-change-btn">E</div>
+              </div>
+              <div class="shortcut-container">
+                  <div class="tools-btn tooltip bucket" data-title="Bucket tool. HotKey (R)"></div>
+                  <div class="tools-btn hotkey-change-btn">R</div>
+              </div>
+              <div class="shortcut-container">
+                  <div class="tools-btn tooltip circle" data-title="Circle tool. HotKey (T)"></div>
+                  <div class="tools-btn hotkey-change-btn">T</div>
+              </div>
+              <div class="shortcut-container">
+                  <div class="tools-btn tooltip rectangle" data-title="Rectangle tool. HotKey (Y)"></div>
+                  <div class="tools-btn hotkey-change-btn">Y</div>
+              </div>
+              <div class="shortcut-container">
+                  <div class="tools-btn tooltip hexagon" data-title="Hexagon tool. HotKey (U)"></div>
+                  <div class="tools-btn hotkey-change-btn">U</div>
+              </div>
+              <div class="shortcut-container">
+                  <div class="tools-btn tooltip move" data-title="Hexagon tool. HotKey (I)"></div>
+                  <div class="tools-btn hotkey-change-btn">U</div>
+              </div>
+              <div class="shortcut-container">
+                  <div class="tools-btn tooltip color-picker" data-title="Color-picker tool. HotKey (O)"></div>
+                  <div class="tools-btn hotkey-change-btn" >I</div>
+              </div>
             </div>
             <div class="modal-footer">
               <h3>Click on a shortcut to change the key.</h3>
@@ -113,13 +148,14 @@
     <section class='preview-section'>
       <div class="preview-container">
         <div class="canvas-background">
+          <a href="#" id='save-image'></a>
           <div class="animation-player">
             <canvas id="preview-canvas" width="200px" height="200px"></canvas>
           </div>
         </div>
         <div class="fps-container">
             <div class="fps">FPS: 1</div>
-            <input type="range" min="1" max="24" step="1" value="1">
+            <input id="fps-input" type="range" min="1" max="24" step="1" value="1">
         </div>
       </div>
       <button id='fullscreen-btn'>Open at fullscreen</button>
@@ -134,5 +170,5 @@
       </div>
     </section>
   </main>
-<script type="text/javascript" src="app.bundle.js"></script></body>
+<script type="text/javascript" src="./app.bundle.js"></script></body>
 </html>
